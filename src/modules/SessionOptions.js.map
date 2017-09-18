@@ -1,0 +1,1 @@
+{"version":3,"file":"SessionOptions.js","sourceRoot":"","sources":["SessionOptions.ts"],"names":[],"mappings":";;AAAA,IAAM,WAAW,GAAG;IAClB,MAAM,EAAE,OAAO,CAAC,GAAG,CAAC,cAAc,IAAI,aAAa;IACnD,MAAM,EAAE,KAAK;IACb,iBAAiB,EAAE,IAAI;IACrB,MAAM,EAAE;QACN,MAAM,EAAE,KAAK;QACb,QAAQ,EAAE,IAAI;QACd,IAAI,EAAE,GAAG;KACV;CACJ,CAAC;AAEF,kBAAe,WAAW,CAAC"}
