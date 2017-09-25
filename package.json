@@ -1,0 +1,85 @@
+{
+  "name": "@raincatcher/demo-server",
+  "version": "0.0.5",
+  "description": "Raincatcher demo application server using express",
+  "types": "src/index.ts",
+  "main": "src/index.js",
+  "author": "feedhenry-raincatcher@redhat.com",
+  "license": "Apache-2.0",
+  "scripts": {
+    "clean": "del coverage_report src/*.js src/**/*.js src/**/**/*.js src/*.map src/**/*.map src/**/**/*.map test/**/*.js test/**/*.map",
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "startDebug": "ts-node --inspect --debug-brk src/index.ts",
+    "watch": "nodemon",
+    "test": "nyc mocha"
+  },
+  "private": true,
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "coverage_report",
+    "check-coverage": true,
+    "lines": 75,
+    "functions": 60,
+    "branches": 70
+  },
+  "devDependencies": {
+    "@raincatcher/logger": "0.0.1",
+    "@types/bluebird": "^3.5.8",
+    "@types/body-parser": "^1.16.4",
+    "@types/connect-redis": "0.0.6",
+    "@types/cookie-parser": "^1.4.0",
+    "@types/cors": "^2.8.1",
+    "@types/express": "^4.0.36",
+    "@types/express-handlebars": "0.0.29",
+    "@types/jsonwebtoken": "^7.2.3",
+    "@types/lodash": "^4.14.73",
+    "@types/mocha": "^2.2.41",
+    "@types/mongodb": "^2.2.10",
+    "@types/morgan": "^1.7.32",
+    "@types/node": "^8.0.7",
+    "@types/serve-favicon": "^2.2.28",
+    "del-cli": "^1.1.0",
+    "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.1.0",
+    "source-map-support": "^0.4.16",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.0"
+  },
+  "dependencies": {
+    "@raincatcher/auth-passport": "0.0.5",
+    "@raincatcher/datasync-cloud": "0.0.5",
+    "@raincatcher/express-auth": "0.0.5",
+    "@raincatcher/logger": "0.0.1",
+    "@raincatcher/wfm-demo-data": "0.0.5",
+    "@raincatcher/wfm-rest-api": "0.0.5",
+    "@raincatcher/wfm-user": "0.0.5",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "connect-redis": "^3.3.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "jsonwebtoken": "^7.4.3",
+    "keycloak-connect": "^3.2.1",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.31",
+    "morgan": "^1.8.2",
+    "serve-favicon": "^2.4.3"
+  }
+}
