@@ -12,7 +12,9 @@
     "start": "ts-node src/index.ts",
     "startDebug": "ts-node --inspect --debug-brk src/index.ts",
     "watch": "nodemon",
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "private": true,
   "nyc": {
@@ -80,6 +82,8 @@
     "lodash": "^4.17.4",
     "mongodb": "^2.2.31",
     "morgan": "^1.8.2",
-    "serve-favicon": "^2.4.3"
-  }
+    "serve-favicon": "^2.4.3",
+    "snyk": "^1.42.6"
+  },
+  "snyk": true
 }
