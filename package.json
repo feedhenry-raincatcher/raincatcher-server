@@ -1,0 +1,88 @@
+{
+  "name": "@raincatcher/demo-server",
+  "version": "1.1.1",
+  "description": "Raincatcher demo application server using express",
+  "types": "src/index.ts",
+  "main": "src/index.js",
+  "author": "feedhenry-raincatcher@redhat.com",
+  "license": "MIT",
+  "scripts": {
+    "clean": "del coverage_report src/*.js src/**/*.js src/**/**/*.js src/*.map src/**/*.map src/**/**/*.map test/**/*.js test/**/*.map",
+    "build": "tsc",
+    "start": "node src/index.js",
+    "start:ts": "ts-node src/index.ts",
+    "startDebug": "ts-node --inspect --debug-brk src/index.ts",
+    "watch": "nodemon",
+    "test": "nyc mocha"
+  },
+  "private": true,
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "report-dir": "coverage_report",
+    "check-coverage": true,
+    "lines": 75,
+    "functions": 60,
+    "branches": 70
+  },
+  "devDependencies": {
+    "@types/bluebird": "3.5.18",
+    "@types/body-parser": "1.16.8",
+    "@types/connect-redis": "0.0.7",
+    "@types/cookie-parser": "1.4.1",
+    "@types/cors": "2.8.3",
+    "@types/express": "4.0.39",
+    "@types/express-handlebars": "0.0.30",
+    "@types/jsonwebtoken": "7.2.3",
+    "@types/lodash": "4.14.85",
+    "@types/loglevel": "1.5.3",
+    "@types/mocha": "2.2.44",
+    "@types/mongodb": "2.2.16",
+    "@types/morgan": "1.7.35",
+    "@types/node": "8.0.53",
+    "@types/serve-favicon": "2.2.30",
+    "del-cli": "1.1.0",
+    "mocha": "4.0.1",
+    "nodemon": "1.12.1",
+    "nyc": "11.3.0",
+    "source-map-support": "0.5.0",
+    "ts-node": "3.3.0",
+    "typescript": "2.6.1"
+  },
+  "dependencies": {
+    "@raincatcher/auth-passport": "1.1.1",
+    "@raincatcher/datasync-cloud": "1.1.1",
+    "@raincatcher/express-auth": "1.1.1",
+    "@raincatcher/filestore": "1.1.1",
+    "@raincatcher/logger": "1.1.1",
+    "@raincatcher/wfm-demo-data": "1.1.1",
+    "@raincatcher/wfm-rest-api": "1.1.1",
+    "@raincatcher/wfm-user": "1.1.1",
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "connect-redis": "3.3.2",
+    "cookie-parser": "1.4.3",
+    "cors": "2.8.4",
+    "express": "4.16.2",
+    "express-handlebars": "3.0.0",
+    "express-session": "1.15.6",
+    "jsonwebtoken": "8.1.0",
+    "keycloak-connect": "3.4.0",
+    "lodash": "4.17.4",
+    "loglevel": "1.4.1",
+    "mongodb": "2.2.33",
+    "morgan": "1.9.0",
+    "serve-favicon": "2.4.5"
+  }
+}
